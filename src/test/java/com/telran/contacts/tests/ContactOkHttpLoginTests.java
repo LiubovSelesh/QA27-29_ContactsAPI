@@ -5,6 +5,7 @@ import com.telran.contacts.dto.AuthRequestDto;
 import com.telran.contacts.dto.ErrorDto;
 import com.telran.contacts.dto.LoginRegResponseDto;
 import okhttp3.*;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -35,6 +36,11 @@ public class ContactOkHttpLoginTests {
         ErrorDto errorDto = gson.fromJson(responseJson, ErrorDto.class);
         System.out.println(errorDto.getCode());
         System.out.println(errorDto.getMessage());
+
+        Assert.assertEquals(response.code(),400);
+        Assert.assertEquals(errorDto.getMessage(), "Wrong email format! Example: name@mail.com" );
+        Assert.assertTrue(errorDto.getMessage().contains("Wrong email format!"));
+
     }
 
     @Test
@@ -60,11 +66,14 @@ public class ContactOkHttpLoginTests {
             LoginRegResponseDto regResponseDto =gson.fromJson(responseJson, LoginRegResponseDto.class);
             System.out.println(regResponseDto.getToken());
 //            eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InJvbisyMUBnbWFpbC5jb20ifQ._pWn7N1n8T3BpOa-s8XJfU_aa5tMsPWApGzmKgZmB2U
-        }else  {
+        } else  {
             ErrorDto errorDto = gson.fromJson(responseJson, ErrorDto.class);
             System.out.println(errorDto.getCode());
             System.out.println(errorDto.getMessage());
         }
+
+        Assert.assertTrue(response.isSuccessful());
+        Assert.assertEquals(response.code(),200);
 
     }
 }

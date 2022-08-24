@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-public class ContactClientLoginTests {
+public class ContactClientAPILoginTests {
 
     @Test
     public void loginHTTPTest() throws IOException {
@@ -42,6 +42,7 @@ public class ContactClientLoginTests {
         JsonElement element = JsonParser.parseString(responseJson);
         JsonElement token = element.getAsJsonObject().get("token");
         System.out.println(token.getAsString());
+
 
     }
 

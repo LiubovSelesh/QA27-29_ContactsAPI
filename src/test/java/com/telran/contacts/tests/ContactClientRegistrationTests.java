@@ -3,6 +3,7 @@ package com.telran.contacts.tests;
 import com.google.gson.Gson;
 import com.telran.contacts.dto.AuthRequestDto;
 import com.telran.contacts.dto.ErrorDto;
+import com.telran.contacts.dto.RegistrationRequestDto;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.fluent.Request;
 import org.apache.http.client.fluent.Response;
@@ -20,7 +21,7 @@ public class ContactClientRegistrationTests {
     @Test
     public void registrationHttpTestWithInvalidEmail() throws IOException {
 
-        AuthRequestDto requestDto = AuthRequestDto.builder()
+        RegistrationRequestDto requestDto = RegistrationRequestDto.builder()
                 .email("ron+56gmail.com")
                 .password("Ro1234567$").build();
 

@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.telran.contacts.dto.AuthRequestDto;
 import com.telran.contacts.dto.ErrorDto;
 import com.telran.contacts.dto.LoginRegResponseDto;
+import com.telran.contacts.dto.RegistrationRequestDto;
 import okhttp3.*;
 import org.testng.annotations.Test;
 
@@ -57,7 +58,7 @@ public class ContactOkHttpRegistrationTest {
         Gson gson = new Gson();
         OkHttpClient client = new OkHttpClient();
 
-        AuthRequestDto requestDto = AuthRequestDto.builder()
+        RegistrationRequestDto requestDto = RegistrationRequestDto.builder()
                 .email("ron85@gmail.com")
                 .password("Ro1234567").build();
 
