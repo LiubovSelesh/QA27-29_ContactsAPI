@@ -9,9 +9,9 @@ import lombok.*;
 @ToString
 @Builder
 
-public class AuthorizationAssuredDto {
+public class DeletedUserAssuredDto {
+    String email;
+    String token;
 
-    String first_name;
-    String second_name;
-    String registration_date;
+
 }

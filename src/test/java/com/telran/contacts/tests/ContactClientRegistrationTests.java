@@ -22,7 +22,7 @@ public class ContactClientRegistrationTests {
     public void registrationHttpTestWithInvalidEmail() throws IOException {
 
         RegistrationRequestDto requestDto = RegistrationRequestDto.builder()
-                .email("ron+56gmail.com")
+                .email("ron+21gmail.com")
                 .password("Ro1234567$").build();
 
         Gson gson = new Gson();

@@ -9,9 +9,7 @@ import lombok.*;
 @ToString
 @Builder
 
-public class AuthorizationAssuredDto {
-
+public class UserBaseAssuredDto {
     String first_name;
     String second_name;
-    String registration_date;
 }
