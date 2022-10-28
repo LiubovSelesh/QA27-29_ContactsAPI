@@ -25,13 +25,12 @@ public class ContactClientAPILoginTests {
         String email = "ron+21@gmail.com";
         String password = "Ro1234567$";
 
-         Response response = Request.Post("https://contacts-telran.herokuapp.com/api/login")
+        Response response = Request.Post("https://contacts-telran.herokuapp.com/api/login")
                 .bodyString("{\n" +
                         "  \"email\": \"" + email + "\",\n" +
                         "  \"password\": \"" + password + "\"\n" +
                         "}", ContentType.APPLICATION_JSON)
                 .execute();
-
 
 
         System.out.println(response);
@@ -79,7 +78,6 @@ public class ContactClientAPILoginTests {
 
 
         HttpResponse httpResponse = response.returnResponse();
-//        System.out.println(httpResponse);
         System.out.println(httpResponse.getStatusLine().getStatusCode());
 
         InputStream is = httpResponse.getEntity().getContent();
@@ -91,7 +89,7 @@ public class ContactClientAPILoginTests {
             sb.append(line);
         }
 
-        ErrorDto error =gson.fromJson(sb.toString(), ErrorDto.class);
+        ErrorDto error = gson.fromJson(sb.toString(), ErrorDto.class);
         System.out.println(error.getDetails());
         System.out.println(error.getMessage());
         System.out.println(error.getCode());

@@ -11,16 +11,6 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 
-//
-//import com.google.gson.Gson;
-//import com.telran.contacts.dto.AuthRequestDto;
-//import com.telran.contacts.dto.ErrorDto;
-//import com.telran.contacts.dto.LoginRegResponseDto;
-//import okhttp3.*;
-//import org.testng.annotations.Test;
-//
-//import java.io.IOException;
-
 public class ContactOkHttpRegistrationTest {
 
     public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
@@ -29,8 +19,8 @@ public class ContactOkHttpRegistrationTest {
 
     @Test
     public void registrationUserAlreadyExist() throws IOException {
-       Gson gson = new Gson();
-       OkHttpClient client = new OkHttpClient();
+        Gson gson = new Gson();
+        OkHttpClient client = new OkHttpClient();
 
         AuthRequestDto requestDto = AuthRequestDto.builder()
                 .email("ron+21@gmail.com")
@@ -50,7 +40,7 @@ public class ContactOkHttpRegistrationTest {
         ErrorDto errorDto = gson.fromJson(responseJSON, ErrorDto.class);
         System.out.println(errorDto.getCode());
         System.out.println(errorDto.getMessage());
-        
+
     }
 
     @Test
