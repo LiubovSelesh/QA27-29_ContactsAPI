@@ -1,7 +1,6 @@
 package com.telran.ilCarro.tests;
 
 import com.jayway.restassured.RestAssured;
-import com.telran.ilCarro.dto.AuthorizationAssuredDto;
 import com.telran.ilCarro.dto.UserBaseAssuredDto;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;

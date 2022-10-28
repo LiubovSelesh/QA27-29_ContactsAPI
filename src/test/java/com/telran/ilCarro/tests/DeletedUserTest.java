@@ -1,14 +1,11 @@
 package com.telran.ilCarro.tests;
 
 import com.jayway.restassured.RestAssured;
-import com.jayway.restassured.specification.RequestSpecification;
-import com.telran.contacts.dto.ContactRequestDto;
-import com.telran.ilCarro.dto.AuthorizationAssuredDto;
 import com.telran.ilCarro.dto.UserBaseAssuredDto;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static com.jayway.restassured.RestAssured.*;
+import static com.jayway.restassured.RestAssured.given;
 
 public class DeletedUserTest {
 

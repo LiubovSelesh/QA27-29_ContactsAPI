@@ -32,7 +32,6 @@ public class RestAssuredTests {
                 .post("registration")
                 .then()
                 .assertThat().statusCode(200)
-//                .extract().response().as(AuthorizationAssuredDto.class);
                 .extract().path("registration_date");
         System.out.println(date);
 
